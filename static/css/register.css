@@ -1,0 +1,76 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Work Sans", sans-serif;
+  background: url("../img/bg.png") center / cover no-repeat, #d9b77a;
+}
+
+.card {
+  width: min(92vw, 400px);
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin: 0 0 18px;
+}
+
+.row { display: flex; gap: 10px; }
+.row .field { flex: 1; }
+.field { margin-bottom: 10px; text-align: left; }
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 0.8rem;
+  border: 1px solid #8a7b6b;
+  border-radius: 8px;
+  background: #f7f5f0;
+}
+
+.pw { position: relative; }
+.pw input { padding-right: 38px; }
+.eye {
+  position: absolute; right: 10px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: 0; cursor: pointer; color: #444;
+}
+
+.hint { font-size: 0.65rem; color: #333; }
+.error { color: #b00020; font-size: 0.7rem; margin: 3px 0 0; }
+
+.agree {
+  display: flex; gap: 6px; align-items: center;
+  font-size: 0.65rem; text-align: left; margin: 6px 0 10px;
+}
+a { color: #222; }
+
+.btn-primary {
+  width: 100%; padding: 10px;
+  border: 0; border-radius: 999px;
+  background: #7a5a3c; color: #fff;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn-primary:hover { background: #664a30; }
+
+.or { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 700; margin: 8px 0; }
+
+.btn-google {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 9px; border: 1px solid #555; border-radius: 999px;
+  background: #fff; color: #222; text-decoration: none; font-size: 0.8rem;
+}
+
+.fine { font-size: 0.6rem; margin: 10px 0 6px; }
+.login-link { font-family: "Cormorant Garamond", serif; font-weight: 700; margin: 0; }

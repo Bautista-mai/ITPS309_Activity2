@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+  <main class="card">
+    <h1>CREATE ACCOUNT</h1>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="field">
+          {{ form.first_name }}
+          {% for e in form.first_name.errors %}<p class="error">{{ e }}</p>{% endfor %}
+        </div>
+        <div class="field">
+          {{ form.last_name }}
+          {% for e in form.last_name.errors %}<p class="error">{{ e }}</p>{% endfor %}
+        </div>
+      </div>
+
+      <div class="field">
+        {{ form.email }}
+        {% for e in form.email.errors %}<p class="error">{{ e }}</p>{% endfor %}
+      </div>
+
+      <div class="field">
+        <div class="pw">
+          {{ form.password }}
+          <button type="button" class="eye" aria-label="Show password">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <small class="hint">Atleast 8 characters, with a number and a symbol.</small>
+        {% for e in form.password.errors %}<p class="error">{{ e }}</p>{% endfor %}
+      </div>
+
+      <div class="field">
+        <div class="pw">
+          {{ form.confirm_password }}
+          <button type="button" class="eye" aria-label="Show password">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        {% for e in form.confirm_password.errors %}<p class="error">{{ e }}</p>{% endfor %}
+      </div>
+
+      <label class="agree">
+        {{ form.agree }}
+        <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</span>
+      </label>
+      {% for e in form.agree.errors %}<p class="error">{{ e }}</p>{% endfor %}
+
+      <button type="submit" class="btn-primary">Create Account</button>
+    </form>
+
+    <p class="or">OR</p>
+
+    <a href="#" class="btn-google">
+      <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.5 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6.1C1 16.4 0 20.1 0 24s1 7.6 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.7 2.3-7.7 2.3-6.3 0-11.7-4-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+      Log in with Google
+    </a>
+
+    <p class="fine">By continuing, you agree to our updated <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+    <p class="login-link">Already have an account? <a href="{% url 'login' %}">Log in here.</a></p>
+  </main>
+
+  <script>
+    document.querySelectorAll(".eye").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const input = btn.parentElement.querySelector("input");
+        input.type = input.type === "password" ? "text" : "password";
+      });
+    });
+  </script>
+</body>
+</html>
