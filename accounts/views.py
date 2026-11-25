@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib.auth import login
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from .forms import RegisterForm
@@ -16,4 +15,4 @@ def register(request):
 
 
 def home(request):
-    return HttpResponse("Welcome! Account created.")
+    return render(request, "home.html")
