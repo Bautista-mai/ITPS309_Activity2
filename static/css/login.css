@@ -1,0 +1,226 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+
+    font-family: "Work Sans", sans-serif;
+
+    background-image: url('/static/img/bg.png');
+
+    padding: 20px;
+}
+
+/* Login Card */
+.login-container {
+    width: min(92vw, 400px);
+}
+
+.login-card {
+    width: 100%;
+    padding: 28px 32px;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Heading */
+.login-card h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    margin: 0 0 18px;
+    color: #111;
+}
+
+/* Input Fields */
+.field {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.field input {
+    width: 100%;
+    padding: 9px 12px;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+
+    border: 1px solid #8a7b6b;
+    border-radius: 8px;
+
+    background: #f7f5f0;
+    color: #333;
+
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #7a5a3c;
+    box-shadow: 0 0 0 2px rgba(122, 90, 60, 0.12);
+}
+
+.field input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+/* Password Field */
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 38px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: #444;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Forgot Password */
+.forgot-password {
+    text-align: right;
+    margin: 3px 0 10px;
+}
+
+.forgot-password a {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.85rem;
+    color: #222;
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error {
+    color: #b00020;
+    font-size: 0.7rem;
+    margin: 3px 0;
+}
+
+/* Sign In Button */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: #7a5a3c;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #664a30;
+}
+
+/* OR Divider */
+.divider {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    margin: 8px 0;
+    color: #111;
+}
+
+/* Google Login */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 9px;
+
+    border: 1px solid #555;
+    border-radius: 999px;
+
+    background: #fff;
+    color: #222;
+
+    text-decoration: none;
+    font-size: 0.8rem;
+
+    transition: background 0.2s;
+}
+
+.google-btn:hover {
+    background: #f0ece5;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Terms and Conditions */
+.terms {
+    font-size: 0.6rem;
+    line-height: 1.4;
+
+    margin: 10px 0 6px;
+    color: #222;
+}
+
+.terms a {
+    color: #222;
+    text-decoration: underline;
+}
+
+/* Register Link */
+.register-link {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    margin: 0;
+    color: #222;
+}
+
+.register-link a {
+    color: #222;
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 400px) {
+    .login-card {
+        padding: 25px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 1.9rem;
+    }
+}
