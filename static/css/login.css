@@ -12,7 +12,7 @@ body {
 
     font-family: "Work Sans", sans-serif;
 
-    background-image: url('/static/img/bg.png');
+    background: url("../img/bg.png") center / cover no-repeat, #d9b77a;
 
     padding: 20px;
 }
